@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaDeportivaHuichapan.COMMON", "LaDeportivaHuichapan.COMMON\LaDeportivaHuichapan.COMMON.csproj", "{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaDeportivaHuichapan.DAL", "LaDeportivaHuichapan.DAL\LaDeportivaHuichapan.DAL.csproj", "{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
