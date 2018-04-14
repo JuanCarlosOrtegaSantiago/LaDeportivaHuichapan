@@ -5,11 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaDeportivaHuichapan.GUI.Escritorio.Administrador"
         mc:Ignorable="d"
-        Title="VentanaReguistros" Height="450" Width="800">
-    <Window.Background>
+        Title="VentanaReguistros" Height="500" Width="600" Background="#FF83957A">
+    <!--<Window.Background>
         <ImageBrush ImageSource="img/fondo3.png"/>
-    </Window.Background>
-    <Grid>
-        
-    </Grid>
+    </Window.Background>-->
+    <TabControl>
+        <TabItem Header="Deporte">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.RowSpan="6" Grid.ColumnSpan="4">
+                    <Image Source="img/fondo3.png" />
+                </StackPanel>
+                
+            </Grid>
+
+        </TabItem>
+        <TabItem Header="Equipo">
+            <StackPanel>
+                <Image Source="img/fondo3.png" />
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Jugadores">
+            <StackPanel>
+                <Image Source="img/fondo3.png" />
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="X" x:Name="salir" MouseDoubleClick="salir_MouseDoubleClick">
+            <StackPanel>
+                <Image Source="img/fondo3.png" />
+            </StackPanel>
+        </TabItem>
+    </TabControl>
 </Window>

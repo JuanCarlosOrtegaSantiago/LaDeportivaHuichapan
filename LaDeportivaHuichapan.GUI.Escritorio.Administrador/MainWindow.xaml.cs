@@ -36,8 +36,8 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            string contra = "juankx";
-            string usuario = "juank99";
+            string contra = "juankx99";
+            string usuario = "juankx";
             if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
             {
                 if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
@@ -64,6 +64,11 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void pwbxContrasena_PreviewDragEnter(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("Presiono enter", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
     }
 }

@@ -33,7 +33,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
                 <Label >Contraseña</Label>
-                <PasswordBox Height="25" Width="150" x:Name="pwbxContrasena"></PasswordBox>
+                <PasswordBox Height="25" Width="150" x:Name="pwbxContrasena" ></PasswordBox>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
                 <Label x:Name="lblError" FontSize="15" FontStyle="Oblique" FontWeight="Black" Foreground="Red" HorizontalAlignment="Center">Usuario o contraseña incorrecto</Label>
