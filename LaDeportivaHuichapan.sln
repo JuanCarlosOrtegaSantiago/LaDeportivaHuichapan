@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaDeportivaHuichapan.COMMON", "LaDeportivaHuichapan.COMMON\LaDeportivaHuichapan.COMMON.csproj", "{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaDeportivaHuichapan.COMMON", "LaDeportivaHuichapan.COMMON\LaDeportivaHuichapan.COMMON.csproj", "{AFC1F98D-7D1A-42E8-8936-AE958C9EFE18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaDeportivaHuichapan.DAL", "LaDeportivaHuichapan.DAL\LaDeportivaHuichapan.DAL.csproj", "{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaDeportivaHuichapan.DAL", "LaDeportivaHuichapan.DAL\LaDeportivaHuichapan.DAL.csproj", "{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaDeportivaHuichapan.BIZ", "LaDeportivaHuichapan.BIZ\LaDeportivaHuichapan.BIZ.csproj", "{5511EABB-0E27-4653-A9FD-F69AB3A15804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaDeportivaHuichapan.GUI.Escritorio.Administrador", "LaDeportivaHuichapan.GUI.Escritorio.Administrador\LaDeportivaHuichapan.GUI.Escritorio.Administrador.csproj", "{0CA55F3D-D8FE-47FA-B268-DBF99666C533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65DC5A04-ACE7-4B2F-BB97-F8EB85E8A62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5511EABB-0E27-4653-A9FD-F69AB3A15804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5511EABB-0E27-4653-A9FD-F69AB3A15804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5511EABB-0E27-4653-A9FD-F69AB3A15804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5511EABB-0E27-4653-A9FD-F69AB3A15804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA55F3D-D8FE-47FA-B268-DBF99666C533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA55F3D-D8FE-47FA-B268-DBF99666C533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA55F3D-D8FE-47FA-B268-DBF99666C533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA55F3D-D8FE-47FA-B268-DBF99666C533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

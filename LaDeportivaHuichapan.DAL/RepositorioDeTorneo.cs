@@ -8,24 +8,25 @@ using System.Text;
 
 namespace LaDeportivaHuichapan.DAL
 {
-    public class RepositorioDeJugador : IRepositorio<Jugador>
+    public class RepositorioDeTorneo:IRepositorio<Torneo>
     {
         private string DBName = "Control.DB";
-        private string TableName = "Jugador";
+        private string TableName = "Torneo";
 
-        public List<Jugador> Leer
+        public List<Torneo> Leer
         {
-            get{
-                List<Jugador> datos = new List<Jugador>();
+            get
+            {
+                List<Torneo> datos = new List<Torneo>();
                 using (var db = new LiteDatabase(TableName))
                 {
-                    datos = db.GetCollection<Jugador>(TableName).FindAll().ToList();
+                    datos = db.GetCollection<Torneo>(TableName).FindAll().ToList();
                 }
                 return datos;
             }
         }
 
-        public bool Cear(Jugador entidad)
+        public bool Cear(Torneo entidad)
         {
             try
             {
@@ -33,30 +34,30 @@ namespace LaDeportivaHuichapan.DAL
 
                 using (var db = new LiteDatabase(TableName))
                 {
-                    var coleccion = db.GetCollection<Jugador>(TableName);
+                    var coleccion = db.GetCollection<Torneo>(TableName);
                     coleccion.Insert(entidad);
                 }
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
 
                 return false;
             }
         }
 
-        public bool Editar(Jugador entidad)
+        public bool Editar(Torneo entidad)
         {
             try
             {
                 using (var db = new LiteDatabase(TableName))
                 {
-                    var coleccion = db.GetCollection<Jugador>(TableName);
+                    var coleccion = db.GetCollection<Torneo>(TableName);
                     coleccion.Update(entidad);
                 }
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
@@ -69,7 +70,7 @@ namespace LaDeportivaHuichapan.DAL
                 int r;
                 using (var db = new LiteDatabase(TableName))
                 {
-                    var coleccion = db.GetCollection<Jugador>(TableName);
+                    var coleccion = db.GetCollection<Torneo>(TableName);
                     r = coleccion.Delete(e => e.Id == id);
                 }
                 return r > 0;

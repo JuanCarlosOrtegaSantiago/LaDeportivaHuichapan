@@ -5,11 +5,7 @@ using System.Text;
 
 namespace LaDeportivaHuichapan.COMMON.Interfaces
 {
-    public interface IRepositorio<T>where T:Base
+    public interface IManejadorDeDeportes:IManejadorGenerico<Deporte>
     {
-        bool Cear(T entidad);
-        bool Editar(T entidad);
-        bool Eliminar(string id);
-        List<T> Leer { get; }
     }
 }

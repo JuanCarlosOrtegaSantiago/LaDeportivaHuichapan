@@ -8,5 +8,6 @@ namespace LaDeportivaHuichapan.COMMON.Entidades
     {
         public int CantidadDeJugadores { get; set; }
         public List<Jugador> jugadores { get; set; }
+        public int Puntos { get; set; }
     }
 }

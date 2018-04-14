@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiteDB" Version="4.1.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LaDeportivaHuichapan.COMMON\LaDeportivaHuichapan.COMMON.csproj" />
+    <ProjectReference Include="..\LaDeportivaHuichapan.DAL\LaDeportivaHuichapan.DAL.csproj" />
   </ItemGroup>
 
 </Project>
