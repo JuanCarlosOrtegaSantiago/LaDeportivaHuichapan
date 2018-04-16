@@ -36,28 +36,28 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            string contra = "juankx99";
-            string usuario = "juankx";
-            if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
-            {
-                if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
-                {
-                    LimpiarCajas();
-                    return;
-                }
-            }
-            if (tbxUsuario.Text != usuario || pwbxContrasena.Password != contra)
-            {
-                lblError.Visibility = Visibility.Visible;
-                LimpiarCajas();
-                return;
-            }
-            if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
-            {
+            //string contra = "juankx99";
+            //string usuario = "juankx";
+            //if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
+            //{
+            //    if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
+            //    {
+            //        LimpiarCajas();
+            //        return;
+            //    }
+            //}
+            //if (tbxUsuario.Text != usuario || pwbxContrasena.Password != contra)
+            //{
+            //    lblError.Visibility = Visibility.Visible;
+            //    LimpiarCajas();
+            //    return;
+            //}
+            //if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
+            //{
                 VentanaReguistros pagina = new VentanaReguistros();
                 pagina.Show();
                 this.Close();
-            }
+            //}
 
         }
 

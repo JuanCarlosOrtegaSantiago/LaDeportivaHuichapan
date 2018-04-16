@@ -25,16 +25,12 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             
         }
 
-        private void btnAceptar_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void salir_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             MainWindow pagina = new MainWindow();
             pagina.Show();
             this.Close();
         }
+
     }
 }
