@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiteDB, Version=4.1.2.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.2\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -54,9 +57,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GenerarLosTorneos.xaml.cs">
+      <DependentUpon>GenerarLosTorneos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaDeSeleccion.xaml.cs">
+      <DependentUpon>VentanaDeSeleccion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaReguistros.xaml.cs">
       <DependentUpon>VentanaReguistros.xaml</DependentUpon>
     </Compile>
+    <Page Include="GenerarLosTorneos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VentanaDeSeleccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaReguistros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +125,38 @@
     <Resource Include="img\fondo3.png" />
     <Resource Include="img\LaDeportico.png" />
     <Resource Include="img\LaDeportiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LaDeportivaHuichapan.BIZ\LaDeportivaHuichapan.BIZ.csproj">
+      <Project>{5511eabb-0e27-4653-a9fd-f69ab3a15804}</Project>
+      <Name>LaDeportivaHuichapan.BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaDeportivaHuichapan.COMMON\LaDeportivaHuichapan.COMMON.csproj">
+      <Project>{afc1f98d-7d1a-42e8-8936-ae958c9efe18}</Project>
+      <Name>LaDeportivaHuichapan.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaDeportivaHuichapan.DAL\LaDeportivaHuichapan.DAL.csproj">
+      <Project>{65dc5a04-ace7-4b2f-bb97-f8eb85e8a62c}</Project>
+      <Name>LaDeportivaHuichapan.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\accept.png" />
+    <Resource Include="img\add.png" />
+    <Resource Include="img\cancel.png" />
+    <Resource Include="img\delete.png" />
+    <Resource Include="img\key.png" />
+    <Resource Include="img\page_white_edit.png" />
+    <Resource Include="img\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\CambiarVentana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\regresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

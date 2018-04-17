@@ -66,9 +66,20 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             this.Close();
         }
 
-        private void pwbxContrasena_PreviewDragEnter(object sender, DragEventArgs e)
+        private void pwbxContrasena_KeyUp(object sender, KeyEventArgs e)
         {
-            MessageBox.Show("Presiono enter", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            //e.Key == Key.Enter e scon un fi
         }
+
+        //private void jk1(object sender, MouseEventArgs e)
+        //{
+        //    MessageBox.Show("Presiono enter 1", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        //}
+
+        //private void pwbxContrasena_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    MessageBox.Show("Presiono enter 1", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        //} //este evento ocurre cuando el cursos pasa sobre un objeto
+
     }
 }

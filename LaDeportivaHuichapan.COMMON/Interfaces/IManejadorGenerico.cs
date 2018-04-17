@@ -7,7 +7,7 @@ namespace LaDeportivaHuichapan.COMMON.Interfaces
 {
     public interface IManejadorGenerico<T> where T:Base
     {
-        bool agregar(T entidad);0
+        bool agregar(T entidad);
         List<T> listar { get; }
         bool Eliminar(string id);
         bool Modificar(T entidad);

@@ -10,7 +10,7 @@
         <TabControl.Background>
             <ImageBrush ImageSource="img/fondo3.png"/>
         </TabControl.Background>
-        <TabItem Header="Deporte" x:Name="pestanaDeDeportes">
+        <TabItem Header="Deporte" x:Name="pestanaDeDeportes" >
             <Grid x:Name="gridDeDeporte">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10"/>
@@ -41,8 +41,8 @@
                         <TextBlock VerticalAlignment="Center">Creado por Default</TextBlock>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
-                        <Label VerticalAlignment="Center">*Nombre: </Label>
-                        <TextBox x:Name="tbxNombre" VerticalAlignment="Center" Width="150"></TextBox>
+                        <Label VerticalAlignment="Center">*Nombre:</Label>
+                        <TextBox x:Name="tbxNombreDeDeporte" VerticalAlignment="Center" Width="150"></TextBox>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
                         <Label VerticalAlignment="Center">*Lugar De Juego:</Label>
@@ -54,15 +54,15 @@
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnNuevo" Margin="0,10" Width="70">Nuevo</Button>
-                        <Button x:Name="btnGuardar" Margin="0,10" Width="70">Gurdar</Button>
+                        <Button x:Name="btnNuevoDeporte" Click="btnNuevoDeporte_Click" Margin="0,10" Width="70">Nuevo</Button>
+                        <Button x:Name="btnGuardarDeporte" Click="btnGuardarDeporte_Click" Margin="0,10" Width="70">Gurdar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0" >
-                        <Button x:Name="btnCancelar" Margin="0,10" Width="70" >Cancelar</Button>
-                        <Button x:Name="btnEditar" Margin="0,10" Width="70">Editar</Button>
+                        <Button x:Name="btnCancelarDeporte" Click="btnCancelarDeporte_Click" Margin="0,10" Width="70" >Cancelar</Button>
+                        <Button x:Name="btnEditarDeporte" Click="btnEditarDeporte_Click" Margin="0,10" Width="70">Editar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnEliminar" Margin="0,10" Width="70">Eliminar</Button>
+                        <Button x:Name="btnEliminarDeporte" Click="btnEliminarDeporte_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
                 <DataGrid x:Name="dtgDeportes" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
@@ -81,20 +81,21 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="115*"/>
+                    <ColumnDefinition Width="39*"/>
+                    <ColumnDefinition Width="154*"/>
+                    <ColumnDefinition Width="154*"/>
+                    <ColumnDefinition Width="154*"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
-                <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Image Source="img/LaDeportico.png" Height="100" Width="100" Margin="20,10" ></Image>
                     <Label VerticalAlignment="Center" FontWeight="Heavy" FontSize="15">La Deportiva Huichapan</Label>
                 </WrapPanel>
-                <WrapPanel Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <WrapPanel Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label VerticalAlignment="Center"  FontWeight="Heavy" FontSize="15">EQUIPOS</Label>
                 </WrapPanel>
-                <WrapPanel Orientation="Vertical" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <WrapPanel Orientation="Vertical" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5">
                         <Label VerticalAlignment="Center">Id:</Label>
                         <TextBlock VerticalAlignment="Center">Creado por Default</TextBlock>
@@ -104,6 +105,10 @@
                         <TextBox x:Name="tbxNombreEquipo" VerticalAlignment="Center" Width="150"></TextBox>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
+                        <Label VerticalAlignment="Center">*Cantidad De Jugadores:</Label>
+                        <TextBox x:Name="tbxCantidadDeJugadores" VerticalAlignment="Center" Width="150"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
                         <Label VerticalAlignment="Center">*Puntos:</Label>
                         <TextBox x:Name="tbxPuntosDeEquipo" VerticalAlignment="Center" Width="150"></TextBox>
                     </WrapPanel>
@@ -111,20 +116,20 @@
                         <Label VerticalAlignment="Center" FontWeight="DemiBold" Foreground="Red">* Campos Obligatrios *</Label>
                     </WrapPanel>
                 </WrapPanel>
-                <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="34,12,34,13">
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnNuevoEquipo" Margin="0,10" Width="70">Nuevo</Button>
-                        <Button x:Name="btnGuardarEquipo" Margin="0,10" Width="70">Gurdar</Button>
+                        <Button x:Name="btnNuevoEquipo" Click="btnNuevoEquipo_Click" Margin="0,10" Width="70">Nuevo</Button>
+                        <Button x:Name="btnGuardarEquipo" Click="btnGuardarEquipo_Click" Margin="0,10" Width="70">Gurdar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0" >
-                        <Button x:Name="btnCancelarEquipo" Margin="0,10" Width="70" >Cancelar</Button>
-                        <Button x:Name="btnEditarEquipo" Margin="0,10" Width="70">Editar</Button>
+                        <Button x:Name="btnCancelarEquipo" Click="btnCancelarEquipo_Click" Margin="0,10" Width="70" >Cancelar</Button>
+                        <Button x:Name="btnEditarEquipo" Click="btnEditarEquipo_Click" Margin="0,10" Width="70">Editar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnEliminarEquipo" Margin="0,10" Width="70">Eliminar</Button>
+                        <Button x:Name="btnEliminarEquipo" Click="btnEliminarEquipo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgEquipo" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
+                <DataGrid x:Name="dtgEquipo" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2"></DataGrid>
             </Grid>
         </TabItem>
         <TabItem Header="Jugadores">
@@ -175,15 +180,15 @@
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnNuevoJugador" Margin="0,10" Width="70">Nuevo</Button>
-                        <Button x:Name="btnGuardarJugador" Margin="0,10" Width="70">Gurdar</Button>
+                        <Button x:Name="btnNuevoJugador" Click="btnNuevoJugador_Click" Margin="0,10" Width="70">Nuevo</Button>
+                        <Button x:Name="btnGuardarJugador" Click="btnGuardarJugador_Click" Margin="0,10" Width="70">Gurdar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0" >
-                        <Button x:Name="btnCancelarJugador" Margin="0,10" Width="70" >Cancelar</Button>
-                        <Button x:Name="btnEditarJugador" Margin="0,10" Width="70">Editar</Button>
+                        <Button x:Name="btnCancelarJugador" Click="btnCancelarJugador_Click" Margin="0,10" Width="70" >Cancelar</Button>
+                        <Button x:Name="btnEditarJugador" Click="btnEditarJugador_Click" Margin="0,10" Width="70">Editar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnEliminarJugador" Margin="0,10" Width="70">Eliminar</Button>
+                        <Button x:Name="btnEliminarJugador" Click="btnEliminarJugador_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
                 <DataGrid x:Name="dtgJugador" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
@@ -229,15 +234,15 @@
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnNuevoTorneo" Margin="0,10" Width="70">Nuevo</Button>
-                        <Button x:Name="btnGuardarTorneo" Margin="0,10" Width="70">Gurdar</Button>
+                        <Button x:Name="btnNuevoTorneo" Click="btnNuevoTorneo_Click" Margin="0,10" Width="70">Nuevo</Button>
+                        <Button x:Name="btnGuardarTorneo" Click="btnGuardarTorneo_Click" Margin="0,10" Width="70">Gurdar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0" >
-                        <Button x:Name="btnCancelarTorneo" Margin="0,10" Width="70" >Cancelar</Button>
-                        <Button x:Name="btnEditarTorneo" Margin="0,10" Width="70">Editar</Button>
+                        <Button x:Name="btnCancelarTorneo" Click="btnCancelarTorneo_Click" Margin="0,10" Width="70" >Cancelar</Button>
+                        <Button x:Name="btnEditarTorneo" Click="btnEditarTorneo_Click" Margin="0,10" Width="70">Editar</Button>
                     </WrapPanel>
                     <WrapPanel Orientation="Vertical" Margin="5,0">
-                        <Button x:Name="btnEliminarTorneo" Margin="0,10" Width="70">Eliminar</Button>
+                        <Button x:Name="btnEliminarTorneo" Click="btnEliminarTorneo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
                 <DataGrid x:Name="dtgTorneo" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>

@@ -28,12 +28,18 @@
                 <Label >Ingresa tu nombre de usuario y contraseña</Label>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
-                <Label >Usuario</Label>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/user.png"></Image>
+                    <Label >Usuario</Label>
+                </StackPanel>
                 <TextBox Height="25" Width="150" x:Name="tbxUsuario" AutomationProperties.AcceleratorKey="+" AutomationProperties.AccessKey="*"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
-                <Label >Contraseña</Label>
-                <PasswordBox Height="25" Width="150" x:Name="pwbxContrasena" ></PasswordBox>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/key.png"></Image>
+                    <Label >Contraseña</Label>
+                </StackPanel>
+                <PasswordBox Height="25" Width="150" x:Name="pwbxContrasena" KeyUp="pwbxContrasena_KeyUp"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
                 <Label x:Name="lblError" FontSize="15" FontStyle="Oblique" FontWeight="Black" Foreground="Red" HorizontalAlignment="Center">Usuario o contraseña incorrecto</Label>
@@ -43,8 +49,18 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" >
-            <Button x:Name="btnAceptar" Click="btnAceptar_Click" Width="80" Margin="30,5" Height="30">Aceptar</Button>
-            <Button x:Name="btnSalir" Click="btnSalir_Click" Width="80" Margin="30,5" Height="30">Salir</Button>
+            <Button x:Name="btnAceptar" Click="btnAceptar_Click" Width="80" Margin="30,5" Height="30">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/accept.png" Stretch="None"></Image>
+                    <Label>Aceptar</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnSalir" Click="btnSalir_Click" Width="80" Margin="30,5" Height="30">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/salir.png" Width="25" Stretch="None"></Image>
+                    <Label>Salir</Label>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
