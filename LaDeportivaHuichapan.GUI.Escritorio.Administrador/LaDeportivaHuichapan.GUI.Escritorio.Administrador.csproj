@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GenerarEquipos.xaml.cs">
+      <DependentUpon>GenerarEquipos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GenerarLosTorneos.xaml.cs">
       <DependentUpon>GenerarLosTorneos.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,10 @@
     <Compile Include="VentanaReguistros.xaml.cs">
       <DependentUpon>VentanaReguistros.xaml</DependentUpon>
     </Compile>
+    <Page Include="GenerarEquipos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GenerarLosTorneos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +164,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nuevo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

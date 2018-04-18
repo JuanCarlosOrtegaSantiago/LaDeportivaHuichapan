@@ -65,7 +65,25 @@
                         <Button x:Name="btnEliminarDeporte" Click="btnEliminarDeporte_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgDeportes" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
+                <ListView x:Name="dtgDeportes" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="250">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Juega en: "/>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0" Text="{Binding LugarDeJuego}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
 
         </TabItem>
@@ -116,7 +134,7 @@
                         <Label VerticalAlignment="Center" FontWeight="DemiBold" Foreground="Red">* Campos Obligatrios *</Label>
                     </WrapPanel>
                 </WrapPanel>
-                <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="34,12,34,13">
+                <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <WrapPanel Orientation="Vertical" Margin="5,0">
                         <Button x:Name="btnNuevoEquipo" Click="btnNuevoEquipo_Click" Margin="0,10" Width="70">Nuevo</Button>
                         <Button x:Name="btnGuardarEquipo" Click="btnGuardarEquipo_Click" Margin="0,10" Width="70">Gurdar</Button>
@@ -129,7 +147,34 @@
                         <Button x:Name="btnEliminarEquipo" Click="btnEliminarEquipo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgEquipo" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2"></DataGrid>
+                <ListView x:Name="dtgEquipo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="300">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  tiene:  "/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding CantidadDeJugadores}"/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  jugadores  "/>
+                                </StackPanel>             
+                                <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0">
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  con:  "/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Puntos}"/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  puntos."/>
+                                </StackPanel>
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </TabItem>
         <TabItem Header="Jugadores">
@@ -167,7 +212,7 @@
                         <TextBox x:Name="tbxNombreJugador" VerticalAlignment="Center" Width="150"></TextBox>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
-                        <Label VerticalAlignment="Center">*Sexo:</Label>
+                        <Label VerticalAlignment="Center">*Genero:</Label>
                         <TextBox x:Name="tbxSexioJugador" VerticalAlignment="Center" Width="150"></TextBox>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Right">
@@ -191,7 +236,32 @@
                         <Button x:Name="btnEliminarJugador" Click="btnEliminarJugador_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgJugador" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
+                <ListView x:Name="dtgJugador" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="300">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  Género:  "/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Sexo}"/>
+                                </StackPanel>             
+                                <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0">
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="  juega en:  "/>
+                                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Puesto}"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </TabItem>
         <TabItem Header="Torneo" x:Name="pestanaTorneo">
@@ -245,7 +315,21 @@
                         <Button x:Name="btnEliminarTorneo" Click="btnEliminarTorneo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgTorneo" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2"></DataGrid>
+                <ListView x:Name="dtgTorneo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="300">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </TabItem>
         <TabItem Header="X" x:Name="salir" MouseDoubleClick="salir_MouseDoubleClick">

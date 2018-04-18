@@ -36,6 +36,12 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
+            ValidacionDeContrasena();
+
+        }
+
+        private void ValidacionDeContrasena()
+        {
             //string contra = "juankx99";
             //string usuario = "juankx";
             //if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
@@ -54,11 +60,10 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             //}
             //if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
             //{
-                VentanaReguistros pagina = new VentanaReguistros();
+                VentanaDeSeleccion pagina = new VentanaDeSeleccion();
                 pagina.Show();
                 this.Close();
             //}
-
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
@@ -68,7 +73,10 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void pwbxContrasena_KeyUp(object sender, KeyEventArgs e)
         {
-            //e.Key == Key.Enter e scon un fi
+            if(e.Key == Key.Enter)
+            {
+                ValidacionDeContrasena();
+            }
         }
 
         //private void jk1(object sender, MouseEventArgs e)

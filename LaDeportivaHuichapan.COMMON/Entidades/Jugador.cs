@@ -8,5 +8,10 @@ namespace LaDeportivaHuichapan.COMMON.Entidades
     {
         public char Sexo { get; set; }
         public string Puesto { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return string.Format("{0}", Nombre);
+        //}
     }
 }

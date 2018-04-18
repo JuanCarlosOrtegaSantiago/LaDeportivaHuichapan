@@ -175,7 +175,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void salir_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MainWindow pagina = new MainWindow();
+            VentanaDeSeleccion pagina = new VentanaDeSeleccion();
             pagina.Show();
             this.Close();
         }

@@ -23,5 +23,12 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         {
             InitializeComponent();
         }
+
+        private void btnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaDeSeleccion pagina = new VentanaDeSeleccion();
+            pagina.Show();
+            this.Close();
+        }
     }
 }

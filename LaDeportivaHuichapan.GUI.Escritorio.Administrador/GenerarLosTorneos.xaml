@@ -6,7 +6,49 @@
         xmlns:local="clr-namespace:LaDeportivaHuichapan.GUI.Escritorio.Administrador"
         mc:Ignorable="d"
         Title="Generar Los Torneos" Height="450" Width="800">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="img/fondo3.png"/>
+    </Window.Background>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Image Source="img/LaDeportico.png"></Image>
+            <Label VerticalAlignment="Center" FontSize="20" FontWeight="Heavy" Margin="15,0">La Deportiva Huichapan</Label>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label VerticalAlignment="Center" FontSize="20" FontWeight="Heavy" Margin="15,0">TORNEOS</Label>
+        </WrapPanel>
+        <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="4">
+            <Button x:Name="btnRegresar" Width="100" Height="30" Click="btnRegresar_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/regresar.png"></Image>
+                    <Label>Regresar</Label>
+                </StackPanel>
+            </Button>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal">
+            
+        </WrapPanel>
+        <ListView x:Name="lstvTorneos" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4">
+            
+        </ListView>
     </Grid>
 </Window>

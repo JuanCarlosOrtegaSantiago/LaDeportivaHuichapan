@@ -22,6 +22,43 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         public VentanaDeSeleccion()
         {
             InitializeComponent();
+            lblNoSelecionado.Visibility = Visibility.Hidden;
+            cmbxVentana.SelectedItem = itemSelecciona;
+        }
+
+        private void btnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow pagina = new MainWindow();
+            pagina.Show();
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (cmbxVentana.SelectedItem == itemSelecciona)
+
+                lblNoSelecionado.Visibility = Visibility.Visible;
+            
+            if (cmbxVentana.SelectedItem == itemAltasYBajas)
+            {
+                VentanaReguistros pagina = new VentanaReguistros();
+                pagina.Show();
+                this.Close();
+            }
+            if (cmbxVentana.SelectedItem == itemGenerarDatos)
+            {
+                GenerarLosTorneos pagina = new GenerarLosTorneos();
+                pagina.Show();
+                this.Close();
+            }
+            if (cmbxVentana.SelectedItem == itemGenerarEquipos)
+            {
+                GenerarEquipos pagina = new GenerarEquipos();
+                pagina.Show();
+                this.Close();
+            }
         }
     }
 }
+

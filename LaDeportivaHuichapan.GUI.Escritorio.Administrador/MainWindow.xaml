@@ -32,7 +32,7 @@
                     <Image Source="img/user.png"></Image>
                     <Label >Usuario</Label>
                 </StackPanel>
-                <TextBox Height="25" Width="150" x:Name="tbxUsuario" AutomationProperties.AcceleratorKey="+" AutomationProperties.AccessKey="*"></TextBox>
+                <TextBox Height="25" Width="150" x:Name="tbxUsuario" KeyUp="pwbxContrasena_KeyUp"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
                 <StackPanel Orientation="Horizontal">

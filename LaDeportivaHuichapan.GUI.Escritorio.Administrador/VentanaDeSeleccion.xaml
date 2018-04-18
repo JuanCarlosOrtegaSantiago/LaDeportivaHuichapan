@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaDeportivaHuichapan.GUI.Escritorio.Administrador"
         mc:Ignorable="d"
-        Title="VentanaDeSeleccion" Height="450" Width="800">
+        Title="" Height="450" Width="650">
     <Window.Background>
         <ImageBrush ImageSource="img/fondo2.png"/>
     </Window.Background>
@@ -29,20 +29,25 @@
                     <Image Source="img/CambiarVentana.png" Width="30"></Image>
                     <Label  FontSize="15">Ventana: </Label>
                 </StackPanel>
-                <ComboBox Height="25" Width="200" x:Name="tbxUsuario" AutomationProperties.AcceleratorKey="+" AutomationProperties.AccessKey="*"></ComboBox>
+                <ComboBox Height="25" Width="200" x:Name="cmbxVentana">
+                    <ComboBoxItem x:Name="itemSelecciona" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Selecciona una ventana</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemAltasYBajas" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Control de altas y bajas</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemGenerarEquipos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Construi equipos</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemGenerarDatos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Generar torneos</ComboBoxItem>
+                </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
-                <Label x:Name="lblError" FontSize="15" FontStyle="Oblique" FontWeight="Black" Foreground="Red" HorizontalAlignment="Center">No has seleccionado nada</Label>
+                <Label x:Name="lblNoSelecionado" FontSize="15" FontStyle="Oblique" FontWeight="Black" Foreground="Red" HorizontalAlignment="Center">No has seleccionado nada</Label>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" >
-            <Button x:Name="btnAceptar" Click="btnAceptar_Click" Width="80" Margin="30,5" Height="30">
+            <Button x:Name="btnAceptar" Width="80" Margin="30,5" Height="30" Click="btnAceptar_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="img/accept.png" Stretch="None"></Image>
                     <Label>Aceptar</Label>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnRegresar" Width="80" Margin="30,5" Height="30">
+            <Button x:Name="btnRegresar" Width="80" Margin="30,5" Height="30" Click="btnRegresar_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="img/regresar.png" Stretch="None"></Image>
                     <Label>Regresar</Label>
