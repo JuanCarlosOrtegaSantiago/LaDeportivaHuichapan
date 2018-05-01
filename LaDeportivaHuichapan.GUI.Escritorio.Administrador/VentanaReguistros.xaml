@@ -65,7 +65,7 @@
                         <Button x:Name="btnEliminarDeporte" Click="btnEliminarDeporte_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <ListView x:Name="dtgDeportes" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                <ListView x:Name="dtgDeportes" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="250">
@@ -147,7 +147,7 @@
                         <Button x:Name="btnEliminarEquipo" Click="btnEliminarEquipo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <ListView x:Name="dtgEquipo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2">
+                <ListView x:Name="dtgEquipo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="300">
@@ -236,7 +236,7 @@
                         <Button x:Name="btnEliminarJugador" Click="btnEliminarJugador_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <ListView x:Name="dtgJugador" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                <ListView x:Name="dtgJugador" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="300">
@@ -315,7 +315,7 @@
                         <Button x:Name="btnEliminarTorneo" Click="btnEliminarTorneo_Click" Margin="0,10" Width="70">Eliminar</Button>
                     </WrapPanel>
                 </WrapPanel>
-                <ListView x:Name="dtgTorneo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2">
+                <ListView x:Name="dtgTorneo" Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="300">

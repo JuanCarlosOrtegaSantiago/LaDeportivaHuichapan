@@ -23,8 +23,15 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
     /// </summary>
     public partial class GenerarEquipos : Window
     {
+        enum accion
+        {
+            nuevo,
+            editar
+        }
+        accion AccionEquipos;
         IManejadorDeEquipo manejadorDeEquipo;
         IManejadorDeJugador manejadorDeJugador;
+        Equipo equipo;
         public GenerarEquipos()
         {
             InitializeComponent();
@@ -34,10 +41,24 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
             //cmbxNombreEquipo.SelectedItem = itemNombreEquipo;
             //cmbxNombreJugador.SelectedItem = itemJugador;
+            LimpearCombos();
             HabilitarBotones(true);
             HabilitarCombos(false);
             ActualizarCombos();
             ActualizarTablaDeEquipo();
+            lstvJugadoresEnEquipo.ItemsSource = null;
+        }
+
+        private void LimpearCombos()
+        {
+            cmbxNombreEquipo.ItemsSource = null;
+            cmbxNombreJugador.ItemsSource = null;
+        }
+
+        private void ActualizarTablaDeJugadoresEnEquipo()
+        {
+            lstvJugadoresEnEquipo.ItemsSource = null;
+            lstvJugadoresEnEquipo.ItemsSource = equipo.jugadores;
         }
 
         private void ActualizarTablaDeEquipo()
@@ -83,6 +104,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         {
             HabilitarBotones(false);
             HabilitarCombos(true);
+            AccionEquipos = accion.nuevo;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -97,9 +119,8 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             {
                 if (cmbxNombreJugador != null)
                 {
-                    Equipo equipo = cmbxNombreEquipo.SelectedItem as Equipo;
-
-                    //equipo.jugadores.Add(cmbxNombreJugador.SelectedItem as Jugador);
+                    equipo.jugadores.Add(cmbxNombreJugador.SelectedItem as Jugador);
+                    ActualizarTablaDeJugadoresEnEquipo();
                 }
                 else
                 {
@@ -122,10 +143,16 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         {
             if (cmbxNombreEquipo != null && cmbxNombreJugador!=null)
             {
-                Equipo equipo = cmbxNombreEquipo.SelectedItem as Equipo;
+                equipo = cmbxNombreEquipo.SelectedItem as Equipo;
                 if (manejadorDeEquipo.Modificar(equipo))
                 {
                     MessageBox.Show("Se agregaron correctamento los jugadores", "Correcto", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    HabilitarBotones(true);
+                    HabilitarCombos(false);
+                    //LimpearCombos();
+                    ActualizarTablaDeEquipo();
+                    lstvJugadoresEnEquipo.ItemsSource = null;
                 }
                 else
                 {
@@ -138,5 +165,51 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
                 MensajeDeNoSeleccinado("Elemento");
             }
         }
+
+        private void cmbxNombreEquipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(AccionEquipos== accion.nuevo)
+            {
+                equipo = cmbxNombreEquipo.SelectedItem as Equipo;
+                equipo.jugadores = new List<Jugador>();
+            }
+ 
+        }
+
+        private void btnQuitar_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstvJugadoresEnEquipo.SelectedItem != null)
+            {
+                    equipo.jugadores.Remove(lstvJugadoresEnEquipo.SelectedItem as Jugador);
+                    ActualizarTablaDeJugadoresEnEquipo();
+            }
+            else
+            {
+                MensajeDeNoSeleccinado("elemento de la lista");
+            }
+        }
+
+        private void btnElimiar_Click(object sender, RoutedEventArgs e)
+        {
+            if(lstvTorneos.SelectedItem!= null)
+            {
+                equipo= lstvTorneos.SelectedItem as Equipo;
+                equipo.jugadores = null;
+                if (manejadorDeEquipo.Modificar(equipo))
+                {
+                    ActualizarTablaDeEquipo();
+                    MessageBox.Show("Se agregaron correctamento los jugadores", "Correcto", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurion un error en la operacion", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MensajeDeNoSeleccinado("elemento de la lista");
+            }
+        }
+
     }
 }
