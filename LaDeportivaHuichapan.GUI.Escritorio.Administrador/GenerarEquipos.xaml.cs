@@ -51,8 +51,8 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void LimpearCombos()
         {
-            cmbxNombreEquipo.ItemsSource = null;
-            cmbxNombreJugador.ItemsSource = null;
+            cmbxNombreEquipo.Text = "";
+            cmbxNombreJugador.Text = "";
         }
 
         private void ActualizarTablaDeJugadoresEnEquipo()
@@ -115,9 +115,9 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            if (cmbxNombreEquipo != null)
+            if (cmbxNombreEquipo.SelectedItem != null)
             {
-                if (cmbxNombreJugador != null)
+                if (cmbxNombreJugador.SelectedItem != null)
                 {
                     equipo.jugadores.Add(cmbxNombreJugador.SelectedItem as Jugador);
                     ActualizarTablaDeJugadoresEnEquipo();
@@ -141,7 +141,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (cmbxNombreEquipo != null && cmbxNombreJugador!=null)
+            if (cmbxNombreEquipo.SelectedItem != null && cmbxNombreJugador.SelectedItem  != null)
             {
                 equipo = cmbxNombreEquipo.SelectedItem as Equipo;
                 if (manejadorDeEquipo.Modificar(equipo))
@@ -150,9 +150,10 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
                     HabilitarBotones(true);
                     HabilitarCombos(false);
-                    //LimpearCombos();
+                    
                     ActualizarTablaDeEquipo();
                     lstvJugadoresEnEquipo.ItemsSource = null;
+                    //LimpearCombos();
                 }
                 else
                 {
@@ -198,7 +199,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
                 if (manejadorDeEquipo.Modificar(equipo))
                 {
                     ActualizarTablaDeEquipo();
-                    MessageBox.Show("Se agregaron correctamento los jugadores", "Correcto", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Se han eliminado correctamente los jugadores", "Correcto", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -211,5 +212,15 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             }
         }
 
+        //private void btnEditar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    HabilitarBotones(false);
+        //    HabilitarCombos(true);
+        //    AccionEquipos = accion.editar;
+
+        //    equipo= lstvTorneos.SelectedItem as Equipo;
+        //    lstvJugadoresEnEquipo.ItemsSource = equipo.jugadores;
+        //    cmbxNombreEquipo.SelectedItem= equipo.Nombre;
+        //}
     }
 }

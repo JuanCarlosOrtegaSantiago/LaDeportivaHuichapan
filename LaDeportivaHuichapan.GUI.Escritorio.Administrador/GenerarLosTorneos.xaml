@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:LaDeportivaHuichapan.GUI.Escritorio.Administrador"
         mc:Ignorable="d"
         Title="Generar Los Torneos" Height="450" Width="800">
-    
+
     <Window.Background>
         <ImageBrush ImageSource="img/fondo3.png"/>
     </Window.Background>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -27,28 +27,121 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
             <Image Source="img/LaDeportico.png"></Image>
             <Label VerticalAlignment="Center" FontSize="20" FontWeight="Heavy" Margin="15,0">La Deportiva Huichapan</Label>
-        </WrapPanel>
-        <WrapPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label VerticalAlignment="Center" FontSize="20" FontWeight="Heavy" Margin="15,0">TORNEOS</Label>
         </WrapPanel>
-        <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="4">
+        <WrapPanel Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+
             <Button x:Name="btnRegresar" Width="100" Height="30" Click="btnRegresar_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="img/regresar.png"></Image>
                     <Label>Regresar</Label>
                 </StackPanel>
             </Button>
+
         </WrapPanel>
-        <WrapPanel Orientation="Horizontal">
-            
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+            <Label >Elige un torneo:</Label>
+            <ComboBox x:Name="cmbxNombreTorneo" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionChanged="cmbxNombreTorneo_SelectionChanged">
+                <!--<ComboBoxItem x:Name="itemNombreEquipo" FontStyle="Italic">EQUIPO</ComboBoxItem>-->
+            </ComboBox>
+            <Label >Elige un deporte:</Label>
+            <ComboBox x:Name="cmbxNombreDeporte" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!--<ComboBoxItem x:Name="itemNombreEquipo" FontStyle="Italic">EQUIPO</ComboBoxItem>-->
+            </ComboBox>
+            <WrapPanel Orientation="Horizontal">
+                <Label >Elige un equipo:</Label>
+                <ComboBox x:Name="cmbxNombreEquipo" Width="150">
+                    <!--<ComboBoxItem x:Name="itemJugador" FontStyle="Italic">JUGADOR</ComboBoxItem>-->
+                </ComboBox>
+                <Button x:Name="btnAgregar" Click="btnAgregar_Click">
+                    <WrapPanel>
+                        <Image Source="img/add.png" Width="20"></Image>
+                    </WrapPanel>
+                </Button>
+                <Button x:Name="btnQuitar" Click="btnQuitar_Click">
+                    <WrapPanel>
+                        <Image Source="img/delete.png" Width="20"></Image>
+                    </WrapPanel>
+                </Button>
+            </WrapPanel>
+
         </WrapPanel>
-        <ListView x:Name="lstvTorneos" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4">
-            
+        <WrapPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnNuevo" Margin="5,5"  Click="btnNuevo_Click">
+                <WrapPanel>
+                    <Image Source="img/nuevo.png" Width="20"></Image>
+                    <Label>Nuevo</Label>
+                </WrapPanel>
+            </Button>
+            <Button x:Name="btnGuardar" Margin="5,5" Click="btnGuardar_Click">
+                <WrapPanel>
+                    <Image Source="img/guardar.png" Width="20"></Image>
+                    <Label>Guardar</Label>
+                </WrapPanel>
+            </Button>
+            <!--<Button x:Name="btnEditar" Margin="5,5" Click="btnEditar_Click">
+                <WrapPanel>
+                    <Image Source="img/editar.png" Width="20"></Image>
+                    <Label>Guardar</Label>
+                </WrapPanel>-->
+            <!--</Button>-->
+            <Button x:Name="btnElimiar" Margin="5,5" Click="btnElimiar_Click">
+                <WrapPanel>
+                    <Image Source="img/delete.png" Width="20"></Image>
+                    <Label>Eliminar</Label>
+                </WrapPanel>
+            </Button>
+            <Button x:Name="btnCancelar" Margin="5,5" Click="btnCancelar_Click">
+                <WrapPanel>
+                    <Image Source="img/cancel.png" Width="20"></Image>
+                    <Label>Cancelr</Label>
+                </WrapPanel>
+            </Button>
+        </WrapPanel>
+
+        <ListView x:Name="lstvDeEquiposEnTorneo" Grid.Row="2" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="10" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView x:Name="lstvTorneos" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="300">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding deporte}" Grid.Column="0" Grid.Row="0"></TextBlock>                        
+                        <TextBlock FontSize="12" HorizontalAlignment="Center" Text="{Binding Nombre}" Grid.Column="1" Grid.Row="0"></TextBlock>
+                        <Expander FontSize="12" Header="Equipos" Grid.Column="2" Grid.Row="0">
+                            <ListView Width="100" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" ItemsSource="{Binding equipos}" Background="{x:Null}" BorderBrush="{x:Null}"></ListView>
+                        </Expander>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Window>

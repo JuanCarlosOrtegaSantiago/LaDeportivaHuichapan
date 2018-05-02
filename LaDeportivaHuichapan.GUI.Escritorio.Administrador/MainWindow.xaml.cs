@@ -42,28 +42,28 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void ValidacionDeContrasena()
         {
-            //string contra = "juankx99";
-            //string usuario = "juankx";
-            //if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
-            //{
-            //    if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
-            //    {
-            //        LimpiarCajas();
-            //        return;
-            //    }
-            //}
-            //if (tbxUsuario.Text != usuario || pwbxContrasena.Password != contra)
-            //{
-            //    lblError.Visibility = Visibility.Visible;
-            //    LimpiarCajas();
-            //    return;
-            //}
-            //if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
-            //{
+            string contra = "juankx99";
+            string usuario = "juankx";
+            if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
+            {
+                if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
+                {
+                    LimpiarCajas();
+                    return;
+                }
+            }
+            if (tbxUsuario.Text != usuario || pwbxContrasena.Password != contra)
+            {
+                lblError.Visibility = Visibility.Visible;
+                LimpiarCajas();
+                return;
+            }
+            if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
+            {
                 VentanaDeSeleccion pagina = new VentanaDeSeleccion();
                 pagina.Show();
                 this.Close();
-            //}
+            }
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
