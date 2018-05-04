@@ -46,6 +46,14 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             ActualizarCombos();
             ActualizarTablaDeTorneos();
             lstvDeEquiposEnTorneo.ItemsSource = null;
+            
+        }
+
+        private void LimpiarDatos()
+        {
+            cmbxNombreDeporte.Text = "";
+            cmbxNombreEquipo.Text = "";
+            cmbxNombreTorneo.Text = "";
         }
 
         private void ActualizarTablaDeTorneos()
@@ -98,26 +106,31 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
         {
             HabilitarBotones(true);
             HabilitarCombos(false);
+            LimpiarDatos();
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            if (cmbxNombreDeporte.SelectedItem != null)
+            if (cmbxNombreTorneo.SelectedItem != null)
             {
-                if (cmbxNombreEquipo.SelectedItem != null)
+                if (cmbxNombreDeporte.SelectedItem != null)
                 {
-                    torneo.equipos.Add(cmbxNombreEquipo.SelectedItem as Equipo);
-                    ActualizarTablaDeEquiposEnTorneo();
+                    if (cmbxNombreEquipo.SelectedItem != null)
+                    {
+                        torneo.equipos.Add(cmbxNombreEquipo.SelectedItem as Equipo);
+                        ActualizarTablaDeEquiposEnTorneo();
+                    }
+                    else
+                    {
+                        MensajeDeNoSeleccinado("Equipo");
+                    }
                 }
                 else
                 {
-                    MensajeDeNoSeleccinado("Equipo");
+                    MensajeDeNoSeleccinado("Deporte");
                 }
             }
-            else
-            {
-                MensajeDeNoSeleccinado("Deporte");
-            }
+            
 
                
         }
@@ -135,7 +148,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if(cmbxNombreDeporte.SelectedItem !=null && cmbxNombreEquipo.SelectedItem != null)
+            if (cmbxNombreDeporte.SelectedItem != null && cmbxNombreEquipo.SelectedItem != null && cmbxNombreTorneo.SelectedItem != null) 
             {
                 torneo = cmbxNombreTorneo.SelectedItem as Torneo;
                 torneo.deporte = cmbxNombreDeporte.SelectedItem as Deporte;
@@ -145,7 +158,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
                     HabilitarBotones(true);
                     HabilitarCombos(false);
-
+                    LimpiarDatos();
                     ActualizarTablaDeTorneos();
                     lstvDeEquiposEnTorneo.ItemsSource = null;
                     //LimpearCombos();
@@ -164,11 +177,15 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void cmbxNombreTorneo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (AccionTorneos == accion.nuevo)
+            if (cmbxNombreTorneo.SelectedItem != null)
             {
-                torneo = cmbxNombreTorneo.SelectedItem as Torneo;
-                torneo.equipos = new List<Equipo>();
+                if (AccionTorneos == accion.nuevo)
+                {
+                    torneo = cmbxNombreTorneo.SelectedItem as Torneo;
+                    torneo.equipos = new List<Equipo>();
+                }
             }
+            
         }
 
         private void btnQuitar_Click(object sender, RoutedEventArgs e)

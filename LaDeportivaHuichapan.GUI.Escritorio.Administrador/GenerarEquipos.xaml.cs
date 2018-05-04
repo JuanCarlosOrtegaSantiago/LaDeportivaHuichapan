@@ -105,12 +105,14 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
             HabilitarBotones(false);
             HabilitarCombos(true);
             AccionEquipos = accion.nuevo;
+            LimpearCombos();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             HabilitarBotones(true);
             HabilitarCombos(false);
+            LimpearCombos();
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
@@ -153,7 +155,7 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
                     
                     ActualizarTablaDeEquipo();
                     lstvJugadoresEnEquipo.ItemsSource = null;
-                    //LimpearCombos();
+                    LimpearCombos();
                 }
                 else
                 {
@@ -169,11 +171,15 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void cmbxNombreEquipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(AccionEquipos== accion.nuevo)
+            if (cmbxNombreEquipo.SelectedItem != null)
             {
-                equipo = cmbxNombreEquipo.SelectedItem as Equipo;
-                equipo.jugadores = new List<Jugador>();
+                if (AccionEquipos == accion.nuevo)
+                {
+                    equipo = cmbxNombreEquipo.SelectedItem as Equipo;
+                    equipo.jugadores = new List<Jugador>();
+                }
             }
+            
  
         }
 
