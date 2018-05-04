@@ -9,36 +9,46 @@ namespace LaDeportivaHuichapan.BIZ
 {
     public class ManejadorDePartida : IManejadorDePartida
     {
-        IManejadorGenerico<Partida> repositorio;
-        public ManejadorDePartida(IManejadorGenerico<Partida> repositorio)
+        IRepositorio<Partida> repositorio;
+        public ManejadorDePartida(IRepositorio<Partida> repositorio)
         {
             this.repositorio = repositorio;
         }
 
-        public List<Partida> listar => repositorio.listar;
+        public List<Partida> listar => repositorio.Leer;
 
         public bool agregar(Partida entidad)
         {
-            return repositorio.agregar(entidad);
+            return repositorio.Cear(entidad);
         }
 
-        public void AsignarPuntos(Equipo Equipo1, int Marcador1, Equipo Equipo2, int Marcador2)
+        public bool AsignarPuntos(Equipo Equipo1, int Marcador1, Equipo Equipo2, int Marcador2)
         {
-            if (Marcador1 > Marcador2)
+            try
             {
-                Equipo1.Puntos += 3;
-                Equipo2.Puntos += 1;
+                if (Marcador1 > Marcador2)
+                {
+                    Equipo1.Puntos += 3;
+                    Equipo2.Puntos += 1;
+                }
+                else if (Marcador1 < Marcador2)
+                {
+                    Equipo1.Puntos += 1;
+                    Equipo2.Puntos += 3;
+                }
+                else
+                {
+                    Equipo1.Puntos += 2;
+                    Equipo2.Puntos += 2;
+                }
+                return true;
             }
-            else if (Marcador1 < Marcador2)
+            catch (Exception)
             {
-                Equipo1.Puntos += 1;
-                Equipo2.Puntos += 3;
+
+                return false;
             }
-            else
-            {
-                Equipo1.Puntos += 2;
-                Equipo2.Puntos += 2;
-            }
+            
         }
 
         public Partida buscarPorId(string id)
@@ -53,7 +63,7 @@ namespace LaDeportivaHuichapan.BIZ
 
         public bool Modificar(Partida entidad)
         {
-            return repositorio.Modificar(entidad);
+            return repositorio.Editar(entidad);
         }
     }
 }

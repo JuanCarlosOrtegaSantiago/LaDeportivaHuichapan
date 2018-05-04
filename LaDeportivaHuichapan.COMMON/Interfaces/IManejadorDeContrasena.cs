@@ -5,8 +5,7 @@ using System.Text;
 
 namespace LaDeportivaHuichapan.COMMON.Interfaces
 {
-    public interface IManejadorDePartida:IManejadorGenerico<Partida>
+    public interface IManejadorDeContrasena : IManejadorGenerico<Contrasena>
     {
-        bool AsignarPuntos(Equipo Equipo1, int Marcador1, Equipo Equipo2, int Marcador2);
     }
 }

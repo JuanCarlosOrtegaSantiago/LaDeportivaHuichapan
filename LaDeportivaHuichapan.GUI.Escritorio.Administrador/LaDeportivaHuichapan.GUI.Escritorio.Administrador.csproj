@@ -63,6 +63,15 @@
     <Compile Include="GenerarLosTorneos.xaml.cs">
       <DependentUpon>GenerarLosTorneos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GenerarPartidas aleatorias.xaml.cs">
+      <DependentUpon>GenerarPartidas aleatorias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReguistroDePuntos.xaml.cs">
+      <DependentUpon>ReguistroDePuntos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaDeCambioDeContrasena.xaml.cs">
+      <DependentUpon>VentanaDeCambioDeContrasena.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaDeSeleccion.xaml.cs">
       <DependentUpon>VentanaDeSeleccion.xaml</DependentUpon>
     </Compile>
@@ -74,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GenerarLosTorneos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GenerarPartidas aleatorias.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,6 +102,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReguistroDePuntos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaDeCambioDeContrasena.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaDeSeleccion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -32,8 +32,10 @@
                 <ComboBox Height="25" Width="200" x:Name="cmbxVentana">
                     <ComboBoxItem x:Name="itemSelecciona" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Selecciona una ventana</ComboBoxItem>
                     <ComboBoxItem x:Name="itemAltasYBajas" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Control de altas y bajas</ComboBoxItem>
-                    <ComboBoxItem x:Name="itemGenerarEquipos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Construi equipos</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemGenerarEquipos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Construir equipos</ComboBoxItem>
                     <ComboBoxItem x:Name="itemGenerarDatos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Generar torneos</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemCambiarContrasena" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Cambiar de contrasena</ComboBoxItem>
+                    <ComboBoxItem x:Name="itemVentanaDePuntos" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center">Reguistrar goles</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >

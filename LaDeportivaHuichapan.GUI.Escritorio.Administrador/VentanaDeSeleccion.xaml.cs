@@ -58,6 +58,18 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
                 pagina.Show();
                 this.Close();
             }
+            if (cmbxVentana.SelectedItem == itemCambiarContrasena)
+            {
+                VentanaDeCambioDeContrasena pagina = new VentanaDeCambioDeContrasena();
+                pagina.Show();
+                this.Close();
+            }
+            if (cmbxVentana.SelectedItem == itemVentanaDePuntos)
+            {
+                ReguistroDePuntos pagina = new ReguistroDePuntos();
+                pagina.Show();
+                this.Close();
+            }
         }
     }
 }

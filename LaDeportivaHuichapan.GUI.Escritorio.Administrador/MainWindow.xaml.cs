@@ -1,4 +1,8 @@
-﻿using System;
+﻿using LaDeportivaHuichapan.BIZ;
+using LaDeportivaHuichapan.COMMON.Entidades;
+using LaDeportivaHuichapan.COMMON.Interfaces;
+using LaDeportivaHuichapan.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +24,24 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        Contrasena usuario;
+        IManejadorDeContrasena manejadorDeContrasena;
         public MainWindow()
         {
             InitializeComponent();
+
+            manejadorDeContrasena = new ManejadorDeContrasena(new RepositorioDeContrasena());
+
+
             LimpiarCajas();
+            cmbxUsuario.ItemsSource = null;
+            cmbxUsuario.ItemsSource = manejadorDeContrasena.listar;
             lblError.Visibility = Visibility.Hidden;
         }
         
         private void LimpiarCajas()
         {
-            tbxUsuario.Clear();
+            cmbxUsuario.Text="";
             pwbxContrasena.Clear();
         }
 
@@ -42,9 +53,9 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
 
         private void ValidacionDeContrasena()
         {
-            string contra = "juankx99";
-            string usuario = "juankx";
-            if (string.IsNullOrWhiteSpace(tbxUsuario.Text) || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
+            
+
+            if (cmbxUsuario.SelectedItem == null || string.IsNullOrWhiteSpace(pwbxContrasena.Password))
             {
                 if (MessageBox.Show("Faltan datos por llenar ", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation) == MessageBoxResult.OK)
                 {
@@ -52,17 +63,23 @@ namespace LaDeportivaHuichapan.GUI.Escritorio.Administrador
                     return;
                 }
             }
-            if (tbxUsuario.Text != usuario || pwbxContrasena.Password != contra)
+            else
             {
-                lblError.Visibility = Visibility.Visible;
-                LimpiarCajas();
-                return;
-            }
-            if (tbxUsuario.Text == usuario && pwbxContrasena.Password == contra)
-            {
-                VentanaDeSeleccion pagina = new VentanaDeSeleccion();
-                pagina.Show();
-                this.Close();
+                usuario = cmbxUsuario.SelectedItem as Contrasena;
+                string contra = usuario.contrasena;
+                if (pwbxContrasena.Password != contra)
+                {
+                    lblError.Visibility = Visibility.Visible;
+                    LimpiarCajas();
+                    return;
+                }
+                if (pwbxContrasena.Password == contra)
+                {
+                    VentanaDeSeleccion pagina = new VentanaDeSeleccion();
+                    pagina.Show();
+                    this.Close();
+                }
+
             }
         }
 
